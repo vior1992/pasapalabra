@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react'
+import Landing from './components/Landing'
+import logic from './logic'
 
-function App() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState('');
+class App extends Component {
+  state = { playerName: null, playMode: false }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          {!name ? 
-          <p>Hello Unknown, you clicked {count} times</p> : 
-          <p>Hello {name}, you clicked {count} times</p> }
-          <button onClick={() => setCount(count + 1)}>
-            +1
-          </button>
-          <button onClick={() => setCount(0)}>
-            Count to 0
-          </button>
-        </div>
-        <div>
-          <form >
-            <input value={name} onChange={e => setName(e.target.value)} />
-            <button type='submit'>Reload</button>
-          </form>
-        </div>
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <section className="App-section">
+          <div>
+            {!this.state.playerName && !this.state.playMode ? 
+              <div>
+                <Landing/>
+              </div>
+            : 
+            //COMPONENT GAMETABLE
+              // WILL USE:
+              // COMPONENT HEADER
+              // COMPONENT QUESTIONS
+                // WILL USE
+                // COMPONENT QUESTION
+              // COMPONENT INPUT
+              // COMPONENT BUTTON
+              // COMPONENT FOOTER
+                // WILL USE
+                // COMPONENT INFOPANEL
+            ''
+            }
+          </div>
+        </section>
+      </div>
+    );
+  }
 }
 
 export default App;
