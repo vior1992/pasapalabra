@@ -1,38 +1,31 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Landing from './components/Landing'
+import GameTable from './components/GameTable'
 import logic from './logic'
 
-class App extends Component {
-  state = { playerName: null, playMode: false }
+function App() {
+  const [ playerName, setPlayerName ] = useState(null)
+  const [ playMode, setPlayMode ] = useState(false)
 
-  render() {
-    return (
-      <div className="App">
-        <section className="App-section">
-          <div>
-            {!this.state.playerName && !this.state.playMode ? 
-              <div>
-                <Landing/>
-              </div>
-            : 
-            //COMPONENT GAMETABLE
-              // WILL USE:
-              // COMPONENT HEADER
-              // COMPONENT QUESTIONS
-                // WILL USE
-                // COMPONENT QUESTION
-              // COMPONENT INPUT
-              // COMPONENT BUTTON
-              // COMPONENT FOOTER
-                // WILL USE
-                // COMPONENT INFOPANEL
-            ''
-            }
-          </div>
-        </section>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <section className="App-section">
+        <div>
+          {!playerName || !playMode ? 
+              <Landing 
+                setPlayerName={setPlayerName}
+                setPlayMode={setPlayMode} 
+              />
+              : 
+              <GameTable
+                setPlayerName={setPlayerName}
+                setPlayMode={setPlayMode} 
+              />
+          }
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default App;

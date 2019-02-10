@@ -1,20 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Header from '../Header'
 import Input from '../Input'
-// import Button from '../Button'
+import PlayButton from '../PlayButton'
 
-class Landing extends Component {
-    state = { playerName: '' } 
-
-    render () {
-        return (
-            <div>
-                <Header />
-                <Input />
-                {/* <Button /> */}
-            </div>
-        )
-    }  
+function Landing(props) {
+    return (
+        <div>
+            <Header/>
+            <p>place where xplain rules</p>
+            <Input setPlayerName={props.setPlayerName}/>
+            <PlayButton setPlayMode={props.setPlayMode}/>
+        </div>
+    )
 }
 
 export default Landing

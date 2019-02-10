@@ -6,9 +6,9 @@ function Input(props) {
             <input
                 type='text'
                 placeholder='Introduce tu nombre'
-                onChange={() => null}
-            >
-            </input>
+                maxLength='22'
+                onChange={e => props.setPlayerName(e.target.value) }
+            />
         </div>
     )
 }
