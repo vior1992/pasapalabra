@@ -1,31 +1,18 @@
 import React, { useState } from 'react'
-import Landing from './components/Landing'
-import GameTable from './components/GameTable'
-import logic from './logic'
+import  LandingPage  from './containers/LandingPage'
+// import logic from './logic'
 
 function App() {
-  const [ playerName, setPlayerName ] = useState(null)
-  const [ playMode, setPlayMode ] = useState(false)
+  // const [ playerName, setPlayerName ] = useState(null)
+  // const [ playMode, setPlayMode ] = useState(false)
 
   return (
     <div className="App">
-      <section className="App-section">
-        <div>
-          {!playerName || !playMode ? 
-              <Landing 
-                setPlayerName={setPlayerName}
-                setPlayMode={setPlayMode} 
-              />
-              : 
-              <GameTable
-                setPlayerName={setPlayerName}
-                setPlayMode={setPlayMode} 
-              />
-          }
-        </div>
+      <LandingPage />
+      <section className="App-section"> 
       </section>
     </div>
   );
 }
 
-export default App;
+export default App
