@@ -1,9 +1,3 @@
-import React from 'react';
-
-const HeaderLogo = () => {
-    return <div>
-        <a>logo donut png</a>
-    </div>
-}
+import HeaderLogo from './HeaderLogo'
 
 export default HeaderLogo

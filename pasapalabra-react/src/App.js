@@ -1,18 +1,33 @@
-import React, { useState } from 'react'
-import  LandingPage  from './containers/LandingPage'
+import React, { useState, useContext } from 'react';
+import { PlayerContext } from './Store';
+import Header from './containers'
 // import logic from './logic'
 
-function App() {
-  // const [ playerName, setPlayerName ] = useState(null)
-  // const [ playMode, setPlayMode ] = useState(false)
+const App = () => {
+  const [, setPlayerName, ,setPlayMode] = useContext(PlayerContext)
+  const [inputPlayerName, setInputPlayerName] = useState('')
+
+  const handlePlayerName = e => {
+      e.preventDefault()
+
+      setPlayerName(inputPlayerName)
+      setInputPlayerName('')
+      setPlayMode(true)
+  }
 
   return (
-    <div className="App">
-      <LandingPage />
-      <section className="App-section"> 
-      </section>
-    </div>
+      <div>
+          <Header />
+          <form onSubmit={e => handlePlayerName(e)}>
+              <input 
+                  placeholder='introduce a name'
+                  value={inputPlayerName}
+                  onChange={e => setInputPlayerName(e.target.value)}
+              >
+              </input>
+          </form>
+      </div>
   );
-}
+};
 
 export default App
