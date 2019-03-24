@@ -1,3 +1,7 @@
-import Header from './Header'
+import Header from './Header';
+import PreviousGameBoard from './PreviousGameBoard';
 
-export default Header
+export {
+    Header,
+    PreviousGameBoard
+};

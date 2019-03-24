@@ -10,10 +10,10 @@ const HeaderPlayername = () => {
                 ?
                     <h4>{playerName}</h4>
                 :
-                    <h1>Playername</h1>
+                    ""
             }
         </div>
-    )
-}
+    );
+};
 
 export default HeaderPlayername

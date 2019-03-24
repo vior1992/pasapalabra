@@ -1,33 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { PlayerContext } from './Store';
-import Header from './containers'
+import { PreviousGameBoard } from './containers'
 // import logic from './logic'
 
 const App = () => {
-  const [, setPlayerName, ,setPlayMode] = useContext(PlayerContext)
-  const [inputPlayerName, setInputPlayerName] = useState('')
+    const [playerName, , playMode, ] = useContext(PlayerContext);
 
-  const handlePlayerName = e => {
-      e.preventDefault()
-
-      setPlayerName(inputPlayerName)
-      setInputPlayerName('')
-      setPlayMode(true)
-  }
-
-  return (
-      <div>
-          <Header />
-          <form onSubmit={e => handlePlayerName(e)}>
-              <input 
-                  placeholder='introduce a name'
-                  value={inputPlayerName}
-                  onChange={e => setInputPlayerName(e.target.value)}
-              >
-              </input>
-          </form>
-      </div>
-  );
+    if (!playerName && !playMode) return <PreviousGameBoard />
+    else if (playerName && playMode) return <h1>GameBoard</h1>
+    else if (playerName && !playMode) return <h1>ScoreBoard</h1>
 };
 
 export default App
